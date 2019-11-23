@@ -141,6 +141,8 @@ The collection covers a few areas.
 
 * Api is not secured, should it be? One of the api endpoints employs simple api key, & could be adapted across endpoints.
 * Email and event type are case-sensitive matches. Should one or both be case insensitive?
+* Should password be required to persist a user event? Currently not required.
+* Password reported from `GET /v1/user` endpoint, not the best security. Should the password be hashed and/or omitted? For reporting? For storage?
 
 ### Future Considerations
 
