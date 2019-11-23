@@ -137,7 +137,7 @@ The collection covers a few areas.
 }
 ```
 
-#### Known Issues
+### Known Issues
 
 * Api is not secured, should it be? One of the api endpoints employs simple api key, & could be adapted across endpoints.
 * Email and event type are case-sensitive matches. Should one or both be case insensitive?
@@ -151,7 +151,7 @@ The collection covers a few areas.
 * Prototype is a bit clumsy/verbose and could be streamlined using middleware abstaction to improve code readability.
 * The solution includes Dockerized container option and simple deployment ferry using ssh.
 
-#### Other Notes
+### Other Notes
 
 * Inspect the `.env` file for `x-api-key`. This value is required as client header value. (See postman tests for sample use on route `GET /v1/user`)
 
