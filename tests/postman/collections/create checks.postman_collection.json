@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "a877ed8d-79e8-48d5-abe6-053104ee70ff",
+		"name": "create checks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "POST /v1/event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is ok\", function () {",
+									"   pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"response body is empty\", function () {",
+									"    pm.response.to.have.body(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"LOGIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/event",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"event"
+							]
+						},
+						"description": "simple uptime check"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "POST /v1/user -- ns8",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/user -- jarom",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"jarom@hotmail.com\",\n  \"password\": \"passwordIsNachos\",\n  \"phone\": \"503-525-9555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/user -- ari",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"ari@icloud.com\",\n  \"password\": \"passwordIs1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

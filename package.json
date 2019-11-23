@@ -1,0 +1,42 @@
+{
+  "name": "api-node-userevents",
+  "version": "1.0.0",
+  "description": "A simple user events api example.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "clean": "git clean -fxd",
+    "deploy": "docker save pacjman/api-node-userevents | bzip2 | ssh gunter 'bunzip2 | docker load'",
+    "pkg": "docker build -t pacjman/api-node-userevents .",
+    "dev": "docker run --restart=always -p 58100:8100 -d pacjman/api-node-userevents",
+    "start": "node -r dotenv/config dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacjman/api-node-userevents.git"
+  },
+  "keywords": [
+    "blog",
+    "api",
+    "wordpress"
+  ],
+  "author": "pacjman <31190203+pacjman@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pacjman/api-node-userevents/issues"
+  },
+  "homepage": "https://github.com/pacjman/api-node-userevents#readme",
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/express": "^4.16.0",
+    "@types/mysql": "^2.15.5",
+    "@types/node": "^8.10.22",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  }
+}

@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "7df5d5c6-191f-4936-b6ba-16a2a2fbbe41",
+		"name": "sanity checks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "code",
+					"item": [
+						{
+							"name": "POST /v1/event -- code null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid event\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/event",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"event"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/event -- code empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid event code\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/event",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"event"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/event -- code invalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid event code\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \" \"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/event",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"event"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST /v1/event -- body null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is bad request\", function () {",
+									"   pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"response body is not empty\", function () {",
+									"    pm.response.to.not.have.body(\"\");",
+									"});",
+									"",
+									"pm.test(\"response body has expected value\", function () {",
+									"    var json = pm.response.json();",
+									"    pm.expect(json.message).to.eql(\"invalid event\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/event",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/event -- body empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is bad request\", function () {",
+									"   pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"response body is not empty\", function () {",
+									"    pm.response.to.not.have.body(\"\");",
+									"});",
+									"",
+									"pm.test(\"response body has expected value\", function () {",
+									"    var json = pm.response.json();",
+									"    pm.expect(json.message).to.eql(\"invalid event\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/event",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"event"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "email",
+					"item": [
+						{
+							"name": "POST /v1/user -- email null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid user email\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- email empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid user email\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"\",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- email invalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid user email\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \" \",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "password",
+					"item": [
+						{
+							"name": "POST /v1/user -- password null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid password\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- password empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid password\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"password\": \" \",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- password invalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid password\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"password\": \"\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "phone",
+					"item": [
+						{
+							"name": "POST /v1/user -- phone null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is ok\", function () {",
+											"   pm.response.to.be.ok;",
+											"});",
+											"",
+											"pm.test(\"response body is empty\", function () {",
+											"    pm.response.to.have.body(\"\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"password\": \"passwordIsPizza\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- phone empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is ok\", function () {",
+											"   pm.response.to.be.ok;",
+											"});",
+											"",
+											"pm.test(\"response body is empty\", function () {",
+											"    pm.response.to.have.body(\"\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"test@ns8.com\",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								},
+								"description": "simple uptime check"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /v1/user -- phone invalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+										"exec": [
+											"pm.test(\"response status is bad request\", function () {",
+											"   pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"response body is not empty\", function () {",
+											"    pm.response.to.not.have.body(\"\");",
+											"});",
+											"",
+											"pm.test(\"response body has expected value\", function () {",
+											"    var json = pm.response.json();",
+											"    pm.expect(json.message).to.eql(\"invalid user email\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"\",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-url}}/v1/user",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST /v1/user -- body null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is bad request\", function () {",
+									"   pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"response body is not empty\", function () {",
+									"    pm.response.to.not.have.body(\"\");",
+									"});",
+									"",
+									"pm.test(\"response body has expected value\", function () {",
+									"    var json = pm.response.json();",
+									"    pm.expect(json.message).to.eql(\"invalid user\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/user -- body empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is bad request\", function () {",
+									"   pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"response body is not empty\", function () {",
+									"    pm.response.to.not.have.body(\"\");",
+									"});",
+									"",
+									"pm.test(\"response body has expected value\", function () {",
+									"    var json = pm.response.json();",
+									"    pm.expect(json.message).to.eql(\"invalid user\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /v1/user -- body invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177e8dba-f9d6-45c6-a6a0-36a69b7e625f",
+								"exec": [
+									"pm.test(\"response status is bad request\", function () {",
+									"   pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"response body is not empty\", function () {",
+									"    pm.response.to.not.have.body(\"\");",
+									"});",
+									"",
+									"pm.test(\"response body has expected value\", function () {",
+									"    var json = pm.response.json();",
+									"    pm.expect(json.message).to.eql(\"invalid user email\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"emai\": \"test@ns8.com\",\n  \"password\": \"passwordIsPizza\",\n  \"phone\": \"333-222-1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-url}}/v1/user",
+							"host": [
+								"{{api-url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
