@@ -147,8 +147,8 @@ The collection covers a few areas.
 ### Future Considerations
 
 * Load/Concurrency testing. Not considered in prototype.
-* Design emphasizes an extensible single responsibility pattern. For example, the repository could be backed by a different database technology like sqlite or mysql.
-* Prototype is a bit clumsy/verbose and could be streamlined using middleware abstaction to improve code readability.
+* Design emphasizes an extensible single responsibility pattern. For example, one or more repositories could be backed by a different database technology like sqlite or mysql.
+* Prototype is a bit clumsy/verbose and could be streamlined using middleware abstraction to improve code readability.
 * The solution includes Dockerized container option and simple deployment ferry using ssh.
 
 ### Other Notes
